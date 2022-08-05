@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    <title>Document</title>
+    <style>
+        body, ul,  span {
+            text-align: center;
+            font-size: large;
+        }
+        ul {
+            text-align: center;
+            list-style-position: inside;
+        }
+        li {
+            font-size: larger;
+        }
+        a {
+            text-decoration: none;
+            color: black;
+            font-size: x-large;
+            background-color: ghostwhite;
+        }
+    </style>
+</head>
+<body>
+    <%= title %>
+    <!-- <%= messages %> -->
+    <ul class="messages">
+        <!-- Loop through quotes -->
+        <% for(var i = 0; i < messages.length; i++) {%>
+          <li class="message">
+            <!-- Output name from the iterated quote object -->
+            <span><%= messages[i].text %> | Posted by</span> 
+            <!-- Output quote from the iterated quote object -->
+            <span><%= messages[i].user %> | Posted on</span>
+            <span><%= messages[i].added %></span>
+          </li>
+        <% } %>
+      </ul>
+    <a href='/new'>Add New Post</a>
+</body>
+</html>
